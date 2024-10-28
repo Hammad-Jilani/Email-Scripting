@@ -29,7 +29,7 @@ def send_email(i):
     pdf_filename = r'C:\Users\CoreCom\Downloads\tlc.pdf'
     with open(pdf_filename, 'rb') as pdf_file:
       pdf_attachment = MIMEApplication(pdf_file.read(), _subtype='pdf')
-      pdf_attachment.add_header('Content-Disposition', f'attachment; filename="TLC.pdf"')
+      pdf_attachment.add_header('Content-Disposition', f'attachment; filename="TGD details"')
       msg.attach(pdf_attachment)
     
     
@@ -38,15 +38,15 @@ def send_email(i):
       server.login(gmail_user, gmail_password)
       server.sendmail(gmail_user, email_receiver, msg.as_string())
       server.close()
-      sheet.cell(row=i,column=8).value="Send"
+      sheet.cell(row=i,column=18).value="Send"
       print(f"Email send to {email_receiver}")
       work.save(path)
 
     except Exception as e:
-      sheet.cell(row=i,column=8).value='Unsend'
+      sheet.cell(row=i,column=18).value='Unsend'
       print(e)
       print(f"Did not send to {email_receiver}")
       work.save(path)
     
-with ThreadPoolExecutor(max_workers=1) as executor:
+with ThreadPoolExecutor(max_workers=2) as executor:
     futures = [executor.submit(send_email, i) for i in range(1, sheet.max_row + 1)]

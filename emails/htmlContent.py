@@ -82,6 +82,9 @@ def HtmlContent():
                     <li>Inspiring keynotes and panel discussions</li>
                     <li>Best Delegation Awards</li>
                     <li>Unparalleled networking opportunities</li>
+                    <li>Free transportation</li>
+                    <li>Free food</li>
+                    <li>Certificates</li>
                 </ul>
             </div>
 
