@@ -88,6 +88,9 @@ Delegation (min/max 5): 7000 PKR ( After early bird discount 6000 PKR)</li>
             <div class="expectations">
                 <h2>What to Expect:</h2>
                 <ul>
+                    <li>Inspiring keynotes and panel discussions</li>
+                    <li>Best Delegation Awards</li>
+                    <li>Unparalleled networking opportunities</li>
                     <li>Participation certificates Free food</li>
                     <li>Free transportation </li>
                     <li>Special social event: qawali night</li>

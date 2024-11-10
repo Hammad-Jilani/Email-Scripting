@@ -24,7 +24,7 @@ def send_email(i):
     msg['From'] = gmail_user
     msg['To'] = gmail_receiver
     msg['Subject'] = "TGD'24: TLC's Flagship Event - Don't Miss Out!"
-    html_email = HtmlContent()
+    html_email = confirmation(sheet.cell(row=i,column=1).value)
     msg.attach(MIMEText(html_email,'html'))
 
     # pdf_filename = r'C:\Users\CoreCom\Downloads\tlc.pdf'
