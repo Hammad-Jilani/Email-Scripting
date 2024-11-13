@@ -80,7 +80,7 @@ def confirmation(name):
           </tr>
           <tr>
             <td align="center" class="content">
-              <img src="https://i.ibb.co/VJ1sT8W/Whats-App-Image-2024-11-07-at-11-43-29-PM.jpg" alt="TGD" style="width: 100%; max-width: 560px;">
+              <img src="https://raw.githubusercontent.com/Hammad-Jilani/Email-Scripting/refs/heads/main/emails/image/1.jpeg" alt="TGD" style="width: 100%; max-width: 560px;">
             </td>
           </tr>
           <tr>

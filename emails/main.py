@@ -6,32 +6,41 @@ from email.mime.application import MIMEApplication
 from concurrent.futures import ThreadPoolExecutor
 from htmlContent import HtmlContent
 from confirmation import confirmation
+from qawwali import qawwali
+from huzaifa import delegates
 
 path = "C:\\Users\\CoreCom\\Downloads\\final.xlsx"
 
 work = openpyxl.load_workbook(path)
 sheet = work.active
 
-gmail_user = ''
-gmail_password = ''
+gmail_user = 'tlc.khi@nu.edu.pk'
+gmail_password = 'ncad oior gtow eedc'
 
 def send_email(i):
-  gmail_receiver = sheet.cell(row=i,column=2).value
+  gmail_receiver = sheet.cell(row=i,column=1).value
   
   if gmail_receiver is not None:
     
     msg = MIMEMultipart('alternative')
     msg['From'] = gmail_user
     msg['To'] = gmail_receiver
-    msg['Subject'] = "TGD'24: TLC's Flagship Event - Don't Miss Out!"
-    html_email = confirmation(sheet.cell(row=i,column=1).value)
+    # msg['Subject'] = "TGD'24: TLC's Flagship Event - Don't Miss Out!"
+    # msg['Subject'] = "Confirmation: Grand Debate Participation"
+
+    # msg['Subject'] = "Payment Verification Confirmed - Collect TGD Qawali Pass"
+    msg['Subject'] ="Invitation to Participate in The Grand Debate - A Premier MUN-Style Competition"
+
+    # html_email = confirmation(sheet.cell(row=i,column=1).value)
+    # html_email = qawwali(sheet.cell(row=i,column=1).value)
+    html_email = delegates()
     msg.attach(MIMEText(html_email,'html'))
 
-    # pdf_filename = r'C:\Users\CoreCom\Downloads\tlc.pdf'
-    # with open(pdf_filename, 'rb') as pdf_file:
-    #   pdf_attachment = MIMEApplication(pdf_file.read(), _subtype='pdf')
-    #   pdf_attachment.add_header('Content-Disposition', f'attachment; filename="TGD details"')
-    #   msg.attach(pdf_attachment)
+    pdf_filename = r"C:\Users\CoreCom\Downloads\The Grand Debate '24.pdf"
+    with open(pdf_filename, 'rb') as pdf_file:
+      pdf_attachment = MIMEApplication(pdf_file.read(), _subtype='pdf')
+      pdf_attachment.add_header('Content-Disposition', f'attachment; filename="TGD details"')
+      msg.attach(pdf_attachment)
     
     
     try:
