@@ -1,4 +1,4 @@
-def delegates():
+def delegates(name):
   return f""" 
 <!DOCTYPE html>
 <html>
@@ -76,10 +76,10 @@ def delegates():
 <body>
     <div class="container">
         <div class="header">
-          <h1>Invitation to Participate in The Grand Debate</h1>
+          <h1>Last call to Register for The Grand Debate'24</h1>
         </div>
         <div class="content">
-            <p>Dear Delegate,</p>
+            <p>Dear {name},</p>
             <p>We are thrilled to invite you to <strong>The Grand Debate (TGD)</strong>, an MUN-style bilingual debate competition hosted by <strong>The Literary Club (TLC) at FAST-NUCES</strong>, happening on <strong>November 20-21, 2024</strong>, at our Main Campus. This two-day event promises to bring together experienced and passionate delegates like yourself to engage in a stimulating and collaborative environment. Your presence would undoubtedly elevate the quality of discussions and enrich the overall experience for all participants.</p>
             
             <h3>Event Highlights:</h3>
@@ -99,7 +99,7 @@ def delegates():
             </div>
         </div>
         <div class="container1">
-            <img src="image/HuzaifaTLC.jpeg"alt="TLC">
+            <img src="https://raw.githubusercontent.com/Hammad-Jilani/Email-Scripting/refs/heads/main/emails/image/HuzaifaTLC.jpeg"alt="TLC">
         </div>
         <div class="footer">
             <p>Warm regards,</p>
