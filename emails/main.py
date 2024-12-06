@@ -17,8 +17,8 @@ path = "C:\\Users\\CoreCom\\Downloads\\final.xlsx"
 work = openpyxl.load_workbook(path)
 sheet = work.active
 
-gmail_user = 'hjilani15@gmail.com'
-gmail_password = 'sefs sffw mksu chca'
+gmail_user = ''
+gmail_password = ''
 
 def send_email(i):
   gmail_receiver = sheet.cell(row=i,column=1).value
