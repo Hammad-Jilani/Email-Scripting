@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificates</title>
+  <title>Email Automation</title>
 </head>
 <style>
   *{
@@ -13,35 +13,47 @@
   }
   .container{
     position: relative;
-    height: auto;
   }
   .container img{
     width: 100%;
-    height: 100%;
     z-index: 1;
-    /* object-fit: cover; */
   }
-
   p{
-    width: 82%;
+    width: 78%;
     position: absolute;
+    top: 28%; /* Adjusted this value to move text higher by two lines */
+    left: 11.6%;
     padding: 10px;
     font-family: Calibri, sans-serif;
     font-size: 6vw;
+    margin-top: 20px; /* Reduced space above the text */
   }
-  @media screen and (min-width:400px){
+  @media screen and (max-width:600px) {
     p{
-      top: 46%;
-      left: 22%;
+      width: 80%;
+      font-size: 2vw; /* Adjusted for smaller screens */
+      white-space: wrap;
+    }
+    .container{
+      white-space: wrap;
     }
   }
-
+  @media screen and (min-width:600px) {
+    p{
+      width: 80%;
+      font-size: 2.3vw; /* Adjusted for larger screens */
+      white-space: wrap;
+      left: 26%;
+      top: 47%;
+      font-size: 5vw;
+    }
+  }
 </style>
 <body>
   <div class="container">
-    <img src="/emails/Images/image.png" alt="Letter">
+    <img src="/emails//Images/image.png" alt="Certificates">
     <p>
-      {name}
+      Syed Hammad Ali Jilani
     </p>
   </div>
 </body>
