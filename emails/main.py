@@ -3,26 +3,33 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from concurrent.futures import ThreadPoolExecutor
+import subprocess
 from toPDF import toPDF
+from certificate import certificates
+from createCertificate import getCertificate
+
+
 path = "C:\\Users\\CoreCom\\Downloads\\final.xlsx"
 
 work = openpyxl.load_workbook(path)
 sheet = work.active
 
-gmail_user = 'hjilani15@gmail.com'
-gmail_password = 'sefs sffw mksu chca'
+gmail_user = ''
+gmail_password = ''
 
 def send_email(i):
   gmail_receiver = sheet.cell(row=i,column=1).value
   
   if gmail_receiver is not None:
     name = sheet.cell(row=i,column=2).value
+    
     msg = MIMEMultipart('alternative')
     msg['From'] = gmail_user
     msg['To'] = gmail_receiver
-    msg['Subject'] ="Allotment Details for The Grand Debate'24"
+    msg['Subject'] ="Coders Cup Participation Certificate"
 
     output = toPDF(name)
+    # output = getCertificate(name)
 
     with open(output, 'rb') as file:
       attach = MIMEApplication(file.read(), _subtype='pdf')
